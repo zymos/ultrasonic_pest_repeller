@@ -1,13 +1,11 @@
 Archive member included to satisfy reference by file (symbol)
 
-/usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
-                              main.o (__divmodhi4)
 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
                               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o (exit)
 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
                               main.o (__do_copy_data)
-/usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
-                              /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o) (__udivmodhi4)
+/usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
 
 Memory Configuration
 
@@ -132,7 +130,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x1c8
+.text           0x0000000000000000      0x1d6
  *(.vectors)
  .vectors       0x0000000000000000       0x18 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
                 0x0000000000000000                __vectors
@@ -175,6 +173,8 @@ END GROUP
  *(.init4)
  .init4         0x0000000000000020       0x18 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
                 0x0000000000000020                __do_copy_data
+ .init4         0x0000000000000038       0x10 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
+                0x0000000000000038                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -185,93 +185,76 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000000038        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
+ .init9         0x0000000000000048        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
  *(.init9)
  *(.text)
- .text          0x000000000000003c        0x2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
-                0x000000000000003c                __bad_interrupt
-                0x000000000000003c                __vector_6
-                0x000000000000003c                __vector_3
-                0x000000000000003c                __vector_11
-                0x000000000000003c                __vector_7
-                0x000000000000003c                __vector_5
-                0x000000000000003c                __vector_4
-                0x000000000000003c                __vector_9
-                0x000000000000003c                __vector_2
-                0x000000000000003c                __vector_8
-                0x000000000000003c                __vector_10
- .text          0x000000000000003e      0x128 main.o
-                0x000000000000003e                animal_det
-                0x0000000000000104                __vector_1
-                0x000000000000014a                initialize
- .text          0x0000000000000166        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
- .text          0x0000000000000166        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
- .text          0x0000000000000166        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
- .text          0x0000000000000166        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
-                0x0000000000000166                . = ALIGN (0x2)
+ .text          0x000000000000004c        0x2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
+                0x000000000000004c                __vector_1
+                0x000000000000004c                __bad_interrupt
+                0x000000000000004c                __vector_6
+                0x000000000000004c                __vector_3
+                0x000000000000004c                __vector_11
+                0x000000000000004c                __vector_7
+                0x000000000000004c                __vector_5
+                0x000000000000004c                __vector_4
+                0x000000000000004c                __vector_9
+                0x000000000000004c                __vector_8
+                0x000000000000004c                __vector_10
+ .text          0x000000000000004e      0x122 main.o
+                0x000000000000004e                animal_det
+                0x0000000000000106                __vector_2
+                0x0000000000000152                initialize
+ .text          0x0000000000000170        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+ .text          0x0000000000000170        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+ .text          0x0000000000000170        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
+                0x0000000000000170                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x0000000000000166        0xc main.o
-                0x0000000000000166                main
+ .text.startup  0x0000000000000170       0x62 main.o
+                0x0000000000000170                main
  .text.libgcc.mul
-                0x0000000000000172        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000000000000172       0x26 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
-                0x0000000000000172                __divmodhi4
-                0x0000000000000172                _div
- .text.libgcc   0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
- .text.libgcc   0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
  .text.libgcc.mul
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
- .text.libgcc   0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
- .text.libgcc.mul
-                0x0000000000000198        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
- .text.libgcc.div
-                0x0000000000000198       0x2c /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
-                0x0000000000000198                __udivmodhi4
- .text.libgcc   0x00000000000001c4        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
- .text.libgcc.prologue
-                0x00000000000001c4        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
- .text.libgcc.builtins
-                0x00000000000001c4        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
- .text.libgcc.fmul
-                0x00000000000001c4        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
- .text.libgcc.fixed
-                0x00000000000001c4        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
-                0x00000000000001c4                . = ALIGN (0x2)
+                0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
+                0x00000000000001d2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000001c4        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
-                0x00000000000001c4                exit
-                0x00000000000001c4                _exit
+ .fini9         0x00000000000001d2        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+                0x00000000000001d2                exit
+                0x00000000000001d2                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -290,50 +273,49 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000001c4        0x4 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+ .fini0         0x00000000000001d2        0x4 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000001c8                _etext = .
+                0x00000000000001d6                _etext = .
 
-.data           0x0000000000800060       0x14 load address 0x00000000000001c8
+.data           0x0000000000800060       0x28 load address 0x00000000000001d6
                 0x0000000000800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
  .data          0x0000000000800060        0x0 main.o
- .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
- .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  *(.data*)
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x0000000000800060       0x14 main.o
+ .rodata        0x0000000000800060       0x28 main.o
                 0x0000000000800060                beep_length
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x0000000000800074                . = ALIGN (0x2)
-                0x0000000000800074                _edata = .
-                0x0000000000800074                PROVIDE (__data_end, .)
+                0x0000000000800088                . = ALIGN (0x2)
+                0x0000000000800088                _edata = .
+                0x0000000000800088                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800074        0x0
-                [!provide]                        PROVIDE (__bss_start, .)
+.bss            0x0000000000800088        0x4
+                0x0000000000800088                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0000000000800074        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
- .bss           0x0000000000800074        0x0 main.o
- .bss           0x0000000000800074        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_divmodhi4.o)
- .bss           0x0000000000800074        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
- .bss           0x0000000000800074        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
- .bss           0x0000000000800074        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_udivmodhi4.o)
+ .bss           0x0000000000800088        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/tiny-stack/crtattiny26.o
+ .bss           0x0000000000800088        0x4 main.o
+                0x0000000000800088                time_counter
+ .bss           0x000000000080008c        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_exit.o)
+ .bss           0x000000000080008c        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_copy_data.o)
+ .bss           0x000000000080008c        0x0 /usr/lib/gcc/avr/5.4.0/tiny-stack/libgcc.a(_clear_bss.o)
  *(.bss*)
  *(COMMON)
-                [!provide]                        PROVIDE (__bss_end, .)
-                0x00000000000001c8                __data_load_start = LOADADDR (.data)
-                0x00000000000001dc                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000000080008c                PROVIDE (__bss_end, .)
+                0x00000000000001d6                __data_load_start = LOADADDR (.data)
+                0x00000000000001fe                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800074        0x0
+.noinit         0x000000000080008c        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000800074                _end = .
+                0x000000000080008c                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
@@ -355,13 +337,13 @@ END GROUP
 .user_signatures
  *(.user_signatures*)
 
-.stab           0x0000000000000000      0x870
+.stab           0x0000000000000000      0x8ac
  *(.stab)
- .stab          0x0000000000000000      0x870 main.o
+ .stab          0x0000000000000000      0x8ac main.o
 
-.stabstr        0x0000000000000000      0xd69
+.stabstr        0x0000000000000000      0xd82
  *(.stabstr)
- .stabstr       0x0000000000000000      0xd69 main.o
+ .stabstr       0x0000000000000000      0xd82 main.o
 
 .stab.excl
  *(.stab.excl)

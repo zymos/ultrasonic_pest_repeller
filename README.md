@@ -5,12 +5,13 @@ Beeps dual ultrasonic frequencies with random durration and pauses. Also flashes
 I had a bunch of ATtiny26L, so I used them.  The code is so simple, you can easily convert it to any MCU.
 - Vcc = 5V
 - internal oscilator, 1MHz
-
+- Fuses OK (E:FF, H:F7, L:E1)
+-
 ## Oscilator
 I used an NE556(dual 555) as two astable multivibrator. They drove two ultrasonic piezo speakers, at two different frequencies. Rodents can hear up to 80kHz (In their youth). Humans hear up to 20kHz. I chose 30kHz and 40kHz for the ultrasonic frequencies.
 - Vcc = 12V
-- freq-1 = 30kHz
-- freq-2 = 40kHz
+- freq-1 = 38kHz
+- freq-2 = 55kHz
 - Reset pin is controlled by the MCU 
 - Output to drive ultrasonic speakers
 
@@ -19,13 +20,14 @@ I used two cheap PIR, HC-SR501
 - Vcc = 5V
 - V-pir-output-high = 3.3-3.5V
 - V-pir-output-low = 0.4-0.8V
-- Output to a diode OR-gate
+- Outputs to OR-gate then to inturrupt on MCU
+ - V-pir-out high/low too close to V-mcu-in high/low for diode OR-gate so I used a pin change interupt
 
 ## Ultrasonic speakers
 - two cheap piezo ultrasonic speakers
 - Driven = 12V square wave
-- freq-1 = 30kHz
-- freq-2 = 40kHz
+- freq-1 = 38kHz
+- freq-2 = 55kHz
 
 ## Power
 - Vpower-in = 12V
